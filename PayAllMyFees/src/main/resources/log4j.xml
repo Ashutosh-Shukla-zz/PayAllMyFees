@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC
+  "-//APACHE//DTD LOG4J 1.2//EN" 
+  "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n" />
+		</layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="error" />
+        </filter>
+	</appender>
+
+	<appender name="FILEOUT" class="org.apache.log4j.FileAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %c.%M:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="PAMF_ONLINE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="./logs/pamf-online.log" />
+		<param name="Append" value="true" />
+		<param name="maxFileSize" value="10240KB" />
+		<param name="maxBackupIndex" value="20" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d %-5r  (%t:%c):%n      [%l] %n      %m%n%n" />
+		</layout>
+	</appender>
+
+	<appender name="PAMF_TRANSACTION" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="./logs/transaction.log" />
+		<param name="Append" value="true" />
+		<param name="maxFileSize" value="10240KB" />
+		<param name="maxBackupIndex" value="20" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d %-5r  (%t:%c):%n      [%l] %n      %m%n%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.opensymphony.xwork2">
+		<level value="OFF" />
+	</logger>
+
+	<logger name="freemarker.cache">
+		<level value="OFF" />
+	</logger>
+
+	<logger name="freemarker.beans">
+		<level value="OFF" />
+	</logger>
+
+	<logger name="org.apache.struts2">
+		<level value="OFF" />
+	</logger>
+
+	<logger name="com.mchange.v2.c3p0">
+		<level value="OFF" />
+	</logger>
+
+	<!-- specify the logging level for loggers from other libraries -->
+	<!-- <logger name="org.apache.struts2"> <level value="DEBUG" /> </logger> -->
+	<!-- for all other loggers log only info and above log messages -->
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="PAMF_ONLINE" />
+	</root>
+
+</log4j:configuration>

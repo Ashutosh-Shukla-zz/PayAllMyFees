@@ -1,0 +1,60 @@
+/* ------------loginpage--------------- */
+
+/* Large desktops and laptops */
+
+/* Portrait tablets and medium desktops */
+@media ( min-width : 992px) and (max-width: 1199px) {
+	.navbar-nav {
+		padding-left: 20px;
+	}
+}
+
+/* Portrait tablets and small desktops */
+@media ( min-width : 768px) and (max-width: 991px) {
+	.navbar-nav {
+		padding-left: 20px;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media ( max-width : 767px) {
+	.Login_tab {
+		background-image: none;
+	}
+	.navbar-nav {
+		padding-left: 20px;
+	}
+}
+
+/* Landscape phones and smaller */
+@media ( max-width : 480px) {
+	.Login_tab {
+		background-image: none;
+	}
+	.navbar-nav {
+		padding-left: 10px;
+	}
+	.student_login, .institute_login {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.pmf_header_logo{
+	display:block;
+	float: left;
+	margin-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    width: 20%;
+}
+.pmf_header_name {
+    font-size: 26px;
+    margin: 5px auto 0;
+    text-align: center;
+    width: 80%;    
+}
+.pmf_header_logo img{
+	width:54px;	
+	float:right;
+}
+
+}

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="false" />
+
+	<package name="basicstruts2" extends="struts-default">
+
+		<interceptors>
+			
+			<interceptor name="login" class="com.pamf.login.LoginInterceptor" />
+			<interceptor-stack name="my-stack">
+				<interceptor-ref name="defaultStack" />			
+				<!-- <interceptor-ref name="login" /> -->
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="loginRedirect" type="redirectAction">index</result>
+		</global-results>
+
+		<!--############################################################################ 
+			################### Common Actions ################## ############################################################################### -->
+
+		<action name="updatePassword">
+			<result>/update-password.jsp</result>
+		</action>
+
+		<action name="changePassword" class="com.pamf.password.PAMFPasswordAction"
+			method="changePassword">
+			<result name="updatePassword" type="redirectAction">
+				<param name="actionName">updatePassword</param>
+				<param name="username">${loginCredentials.username}</param>
+				<param name="status">${status}</param>
+			</result>
+		</action>
+
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="aboutUs">
+			<result>/aboutUs.jsp</result>
+		</action>
+
+		<action name="ourServices">
+			<result>/ourServices.jsp</result>
+		</action>
+
+		<action name="contactUs">
+			<result>/contactUs.jsp</result>
+		</action>
+
+		<action name="faq">
+			<result>/faqs.jsp</result>
+		</action>
+
+		<action name="fetchCities" class="com.pamf.admin.PAMFAdminAction"
+			method="fetchCities">
+			<result name="success">/addInstitute.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="checkUsername" class="com.pamf.admin.PAMFAdminAction"
+			method="checkUsername">
+			<result name="success">/addInstitute.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="sign-out" class="com.pamf.login.PAMFLoginAction"
+			method="logout">
+			<result name="success" type="redirectAction">index</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<!--############################################################################ 
+			#################### User Actions ################### ############################################################################### -->
+
+		<action name="forgot">
+			<result>/ForgotPassword.jsp</result>
+		</action>
+
+		<action name="userInstituteView">
+			<result>/institute-sorted-students.jsp</result>
+		</action>
+
+		<action name="invite-friend">
+			<result>/invite-friend.jsp</result>
+		</action>
+
+		<action name="paymenthistory">
+			<result>/paymenthistory.jsp</result>
+		</action>
+
+		<action name="invite-friend-action" class="com.pamf.user.PAMFUserAction"
+			method="inviteFriend">
+			<result name="success" type="redirectAction">
+				<param name="actionName">dashboard</param>
+			</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="loginUser" class="com.pamf.login.PAMFLoginAction"
+			method="validateLogin">
+			<result name="success" type="redirectAction">
+				<param name="actionName">dashboard</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="loginFailed">${loginFailed}</param>
+			</result>
+		</action>
+
+		<action name="dashboard" class="com.pamf.user.PAMFUserAction"
+			method="showUserDashboard">
+			<!-- <interceptor-ref name="login" /> -->
+			<result name="success">/user-dashboard.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="showNotification"
+			class="com.pamf.notifications.PAMFShowNotificationAction" method="showNotificationByStudentID">
+			<result name="success">/student-notifications.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="student-result" class="com.pamf.result.PAMFResultAction"
+			method="showResult">
+			<result name="success">/show-result.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="register-user" class="com.pamf.user.PAMFUserRegisterAction"
+			method="populateStateCity">
+			<result name="success">/register.jsp</result>
+		</action>
+
+		<action name="fetchInstitutes" class="com.pamf.user.PAMFUserRegisterAction"
+			method="fetchInstitutes">
+			<result name="success">/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="showMatchingStudents" class="com.pamf.user.PAMFUserRegisterAction"
+			method="searchStudentsByParams">
+			<result name="success">/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="clearStudent" class="com.pamf.user.PAMFUserRegisterAction" method="clearStudent">
+			<result name="success">#</result>
+		</action>
+
+		<action name="registerUser" class="com.pamf.user.PAMFUserRegisterAction"
+			method="completeRegistration">
+			<result name="success">/registersuccess.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="paymentinfo" class="com.pamf.user.PAMFPaymentAction"
+			method="showPaymentInfo">
+			<result name="success">/payment-info.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<!--############################################################################ 
+			################### Institute Actions ################## ############################################################################### -->
+
+		<action name="loginInstitute" class="com.pamf.login.PAMFLoginAction"
+			method="validateLogin">
+			<result name="success" type="redirectAction">
+				<param name="actionName">institute_showDashboard</param>
+			</result>
+			<result name="error" type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="loginFailed">${loginFailed}</param>
+			</result>
+		</action>
+
+		<action name="institute_*" class="com.pamf.institute.InstituteAction"
+			method="{1}">
+			<interceptor-ref name="my-stack" />
+			<result name="showDashboard">/institute-dashboard.jsp</result>
+			<result name="uploadData">/instituteUploadData.jsp</result>
+			<result name="exportData" />
+			<result name="fetchDivisions">/instituteUploadData.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="notification" class="com.pamf.notifications.PAMFNotificationAction"
+			method="sendNotification">
+			<result name="success">/sendNotification.jsp</result>
+		</action>
+
+		<action name="insertNotificationAction" class="com.pamf.notifications.PAMFNotificationAction"
+			method="insertNotification">
+			<result name="success">/successNotification.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<!--############################################################################ 
+			################### Admin Actions ################### ############################################################################### -->
+
+		<action name="administrator-login">
+			<result>/admin-login.jsp</result>
+		</action>
+
+		<action name="add-institute" class="com.pamf.admin.PAMFAdminAction"
+			method="showAddInstitute">
+			<result name="success">/addInstitute.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="loginAdmin" class="com.pamf.login.PAMFLoginAction"
+			method="validateLogin">
+			<result name="success" type="redirectAction">
+				<param name="actionName">adminDashboard</param>
+			</result>
+			<result name="adminError" type="redirectAction">
+				<param name="actionName">administrator-login</param>
+				<param name="loginFailed">${loginFailed}</param>
+			</result>
+		</action>
+
+		<action name="adminDashboard" class="com.pamf.admin.PAMFAdminAction"
+			method="showAdminDashboard">
+			<!-- <interceptor-ref name="login" /> -->
+			<result name="success">/admin-dashboard.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="institute-detail" class="com.pamf.admin.PAMFAdminAction"
+			method="showInstituteDetail">
+			<result name="success">/institute-detail.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="insert-institute" class="com.pamf.admin.PAMFAdminAction"
+			method="insertInstitute">
+			<result name="success" type="redirectAction">adminDashboard</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="register-user" class="com.pamf.admin.PAMFAdminAction"
+			method="showAddInstitute">
+			<result name="success">/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="changeInstitutionStatus" class="com.pamf.admin.PAMFAdminAction"
+			method="changeInstitutionStatus">
+			<result name="success">/#</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="forgotPassword" class="com.pamf.login.PAMFForgotPasswordAction"
+			method="validateUser">
+			<result name="success">/sendMail.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<!-- ############################################################################ -->
+
+
+		<action name="fetchInstitutes" class="com.pamf.user.PAMFUserRegisterAction"
+			method="fetchInstitutes">
+			<result name="success">/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="showMatchingStudents" class="com.pamf.user.PAMFUserRegisterAction"
+			method="searchStudentsByParams">
+			<result name="success">/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+
+		<action name="checkUserExistence" class="com.pamf.admin.PAMFAdminAction"
+			method="checkUsername">
+			<result name="success">/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</struts>

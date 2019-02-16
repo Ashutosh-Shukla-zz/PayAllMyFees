@@ -1,0 +1,511 @@
+html {
+	overflow: -moz-scrollbars-vertical;
+	overflow: scroll;
+}
+.nofity{
+		float:right;
+	}
+body {
+	color: #2a5473;
+	font-family: Tahoma, Geneva, sans-serif;
+	padding-bottom: 20px;
+}
+
+.page_header {
+	font-size: 22px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.pmf_student_add_reg.row {
+	margin-bottom: 30px;
+	border: 2px solid;
+	margin-left: 0px;
+	margin-right: 0px;
+	border-radius: 6px;
+	font-weight: normal !important;
+}
+
+.pmf_student_add_reg span {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.navbar {
+	margin-bottom: 0px;
+	background-color: #089ad5;
+}
+
+.navbar-nav>li>a {
+	color: #fff !important;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.bg-grey-effect {
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ffffff 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(50%, #f3f3f3), color-stop(100%, #ffffff));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ffffff 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ffffff 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ffffff 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 50%, #ffffff 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+		endColorstr='#ffffff', GradientType=0); /* IE6-9 */
+	margin-top: 10px;
+	/*background-color: #F2F2F2;*/
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+.Login_tab {
+	padding-top: 15px;
+	padding-bottom: 45px;
+	background-size: cover;
+	background-image: url("../images/homepage_login_tab_bg[1].png");
+	overflow: hidden;
+	border-radius: 15px;
+}
+
+.loginform .control-label {
+	padding-top: 2px;
+}
+
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 930px;
+  
+}
+
+.pmf_header_logo {
+	width: 20%;
+	float: left;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+.pmf_header_social {
+	margin-top: 100px;
+	width: 20%;
+	float: right;
+}
+
+.pmf_header_name {
+	padding-left: 10px;
+	margin-top: 45px;
+	width: 60%;
+	float: left;
+	font-size: 42px;
+	color: #2A5473;
+}
+
+.pmf_header_subtext {
+	font-size: 19px;
+}
+
+.pmf_txt_center {
+	text-align: center;
+}
+
+.student_login, .institute_login {
+	width: 50%;
+	float: left;
+	padding-right: 80px;
+	padding-left: 80px;
+}
+
+.student_login .bg_h2, .institute_login .bg_h2 {
+	margin-bottom: 25px;
+}
+
+.container.bodydiv {
+	padding-top: 20px;
+}
+
+.form-horizontal .form-group {
+	margin-left: 0px;
+}
+
+.loginform .reg-button.div.a, .loginform .reg-button.div.button {
+	margin: 2px;
+}
+
+.student_login table, .institute_login table {
+	margin: 0px auto;
+}
+
+.bg_h2 {
+	font-weight: normal;
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	background-color: #089AD5;
+	padding: 5px;
+}
+
+.student_login td, .institute_login td {
+	padding-right: 20px;
+	padding-top: 20px;
+	width: auto;
+}
+
+.student_login label, .institute_login label {
+	font-size: 16px;
+	font-weight: normal;
+	color: #2A5473;
+}
+
+.btn-sm, .btn-group-sm>.btn {
+	border-radius: 0px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 2px 20px;
+}
+
+.btn-primary {
+	background-color: #089ad5;
+	border-color: #089ad5;
+	color: #fff;
+}
+
+.ann_notices {
+	width: 60%;
+	float: left;
+	border: 1px #2A5473 solid;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+.main_results {
+	width: 30%;
+	float: right;
+}
+
+.modal-dailog {
+	position: absolute;
+	top: 20%;
+	right: 25%;
+	width: 50%;
+}
+
+.ann_notices_content {
+	height: 100px;
+	margin: 10px auto;
+}
+
+.midcontent {
+	
+	overflow: hidden;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.clear {
+	content: "";
+	clear: both;
+}
+
+.main_results ul li {
+	list-style-type: none;
+	color: #2a5473;
+	font-size: 13px;
+	margin-bottom: 3px;
+}
+
+.footer ul li {
+	display: inline-block;
+	padding: 0px 5px;
+	border-left: solid #2a5473;
+	font-weight: bold;
+}
+
+.footer ul {
+	padding-left: 0px;
+}
+
+.footer ul li:FIRST-CHILD {
+	border-left: none;
+}
+
+.footer {
+	border-radius: 15px;
+	border: solid 2px #2a5473;
+	padding: 20px;
+	background-image: url("../images/homepage_login_tab_bg.png");
+	overflow: hidden;
+}
+
+.pmf_footer_copyright {
+	
+}
+
+.registration {
+	width: 55%;
+	margin: 0px auto;
+}
+
+.regtext div {
+	font-size: 15px;
+	color: #2A5473;
+	padding-top: 20px;
+	float: left;
+	width: 50%;
+	margin: 0px auto;
+	color: #2A5473;
+}
+
+.midsection {
+padding-bottom: 100px;
+position: relative;
+padding-top: 30px;
+min-height: 100%;
+}
+.stickyfooter{
+	padding-bottom: 100px;
+position: relative;
+padding-top: 30px;
+min-height: 100%;
+	
+}
+.midsection .form-horizontal .control-label {
+	text-align: left;
+}
+
+.facebook {
+	background-position: -185px 4px;
+	background-color: #3b5a97;
+}
+
+.twitter {
+	background-position: -293px 7px;
+	background-color: #00aced;
+}
+
+.youtube {
+	background-color: #DB2A25;
+	background-position: -193px -343px;
+}
+
+.pmf_social_link li a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-image: url("../images/social-icons-sprite.png");
+}
+
+.pmf_social_link li {
+	display: inline-block;
+}
+
+pmf_social_link {
+	margin-top: 100px;
+}
+
+.pb-callout {
+	width: 100%;
+	background-color: rgba(145, 147, 255, 0.2);
+	border-left: 3px #089ad5 solid;
+	padding: 15px 10px 15px 10px;
+	color: #343434;
+}
+
+.fa-chevron-right:before {
+	content: "\f054";
+}
+
+.highlight {
+	background-color: #eee;
+	border-radius: 6px;
+	min-height: 40px;
+	padding: 20px;
+	padding: 5px;
+}
+
+.one-four-px-font-size {
+	font-size:14px !important;
+}
+
+.pmf_registration_form {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#addMoreStudents, #add_more_std {
+	display: none;
+}
+
+.errorCustom {
+	color: #FF0000;
+}
+
+#studentList
+{
+	width: 166%;
+	position: relative;
+	right: 33%;
+}
+
+.alert-sm
+{
+	padding: 6px;
+	margin-bottom: 0px;
+	font-size: 10pt;
+}
+
+/*
+.navbar-nav {
+//float:right;
+} */
+
+/* Large desktops and laptops */
+@media ( min-width : 1200px) {
+	.panel {
+		margin: 0px auto;
+		width: 925px;
+	}
+	.container {
+		width: 960px;
+	}
+	.navbar-nav>li>a {
+		margin-right: 0px;
+	}
+	.navbar-nav>li:HOVER {
+		backgrgound-color: #337ab7;
+	}
+	
+}
+
+/* Portrait tablets and medium desktops */
+@media ( min-width : 992px) and (max-width: 1199px) {
+	.navbar-nav {
+		padding-left: 20px;
+	}
+}
+
+/* Portrait tablets and small desktops */
+@media ( min-width : 768px) and (max-width: 991px) {
+	.navbar-nav {
+		padding-left: 20px;
+	}
+	.pmf_header_logo, .pmf_header_social {
+		display: none;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media ( max-width : 767px) {
+	.Login_tab {
+		background-image: none;
+	}
+	.pmf_header_logo, .pmf_header_social {
+		display: none;
+	}
+	.navbar-nav {
+		padding-left: 20px;
+	}
+}
+
+/* Landscape phones and smaller */
+@media ( max-width : 480px) {
+	.Login_tab {
+		background-image: none;
+	}
+	.navbar-nav {
+		padding-left: 10px;
+	}
+	.pmf_header_logo {
+		display: none;
+	}
+	.pmf_header_social {
+		display: none;
+	}
+	.pmf_header_name {
+		width: 100%;
+		margin: 0px auto;
+		margin-top: 5px;
+		font-size: 30px;
+	}
+	.student_login, .institute_login {
+		width: 100%;
+		margin: 0px auto;
+		float: none;
+	}
+	.ann_notices {
+		overflow: hidden;
+		width: 100%;
+	}
+	.ann_notices_content {
+		width: 100%;
+		height: 100px;
+		margin-bottom: 30px;
+	}
+	.main_results {
+		width: 100%;
+		clear: both;
+		float: none;
+	}
+	.pmf_acad_list {
+		width: 50%;
+		float: left;
+	}
+	.pmf_cmp_list {
+		width: 50%;
+		float: left;
+	}
+	.Login_tab {
+		padding-bottom: 0px;
+	}
+	.footer_info_nav {
+		display: none;
+	}
+	.footer {
+		padding: 2px;
+		font-size: 12px;
+	}
+	.registration {
+		width: 100%;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+	.regtext div {
+		font-size: 13px;
+	}
+	.regtext: last-child {
+		float: right;
+	}
+	#example_wrapper div.col-sm-12.table-responsive {
+		border: none;
+	}
+	#example_filter.dataTables_filter input {
+		display: block;
+	}
+	.nofity{
+		float:left;
+	}
+}
+
+@media ( max-width : 320px) {
+	.regtext input {
+		width: 104px;
+	}
+	#example_wrapper div.col-sm-12.table-responsive {
+		border: none;
+	}
+	#example_filter.dataTables_filter input {
+		display: block;
+	}
+	.nofity{
+		float:left;
+	}
+}

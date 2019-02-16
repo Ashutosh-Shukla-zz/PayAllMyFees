@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>PayallMyfees</title>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.js"></script>
+
+<!-- Bootstrap core CSS -->
+<link href="css/datepicker.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/dataTables.bootstrap.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="navbar.css" rel="stylesheet">
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+<script>
+	$(document).ready(function() {
+		$('#example').dataTable();
+	});
+	$
+			.getScript(
+					"js/bootstrap-datepicker.js",
+					function() {
+
+						var startDate = new Date('01/01/2012');
+						var FromEndDate = new Date();
+						var ToEndDate = new Date();
+
+						ToEndDate.setDate(ToEndDate.getDate() + 365);
+
+						$('.from_date').datepicker({
+
+							weekStart : 1,
+							startDate : '01/01/2012',
+							endDate : FromEndDate,
+							autoclose : true
+						}).on(
+								'changeDate',
+								function(selected) {
+									startDate = new Date(selected.date
+											.valueOf());
+									startDate.setDate(startDate
+											.getDate(new Date(selected.date
+													.valueOf())));
+									$('.to_date').datepicker('setStartDate',
+											startDate);
+								});
+						$('.to_date').datepicker({
+
+							weekStart : 1,
+							startDate : startDate,
+							endDate : ToEndDate,
+							autoclose : true
+						}).on(
+								'changeDate',
+								function(selected) {
+									FromEndDate = new Date(selected.date
+											.valueOf());
+									FromEndDate.setDate(FromEndDate
+											.getDate(new Date(selected.date
+													.valueOf())));
+									$('.from_date').datepicker('setEndDate',
+											FromEndDate);
+								});
+					});
+</script>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<div class="header">
+				<div class="pmf_header_logo">
+					<img src="images/logo.png" width="153px" />
+				</div>
+				<div class="pmf_header_name pmf_txt_center">
+					<div>
+						pay<span style="color: #089ad5;">all</span>my<span
+							style="color: #089ad5;">fees</span>.com
+					</div>
+					<div class="pmf_header_subtext pmf_txt_center">Easy . Secure
+					</div>
+				</div>
+				<div class="pmf_header_social">
+					<ul class="pmf_social_link">
+						<li ><a class="facebook" href="#"></a></li>
+						<li ><a class="twitter" href="#"></a></li>
+						<li ><a class="youtube" href="#"></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Static navbar -->
+			<nav class="navbar navbar-default clear" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar"
+							aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Our Services</a></li>
+							<li><a href="#">Our Partners Institutions</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+
+					</div>
+					<!--/.nav-collapse -->
+				</div>
+				<!--/.container-fluid -->
+			</nav>
+		</header>
+
+		<div class="midsection">
+<!-- 		<div style="float:right">
+			<div class="col-sm-6">
+			<label>Start Date : <input type="text" class="from_date form-control " placeholder="Select start date"
+				contenteditable="false"></label>
+				</div>
+			<div class="col-sm-6">
+			 <label>End Date: <input type="text" class="to_date form-control "
+				placeholder="Select end date" contenteditable="false">
+			 </label>
+			</div>
+		</div> -->
+			
+			<div id="example_wrapper"
+				class="dataTables_wrapper form-inline dt-bootstrap">
+				<div class="row">
+						<div class="col-sm-3">
+							<label>Start Date : <input type="text"
+								class="from_date form-control " placeholder="Select start date"
+								contenteditable="false"></label>
+						</div>
+						<div class="col-sm-3">
+							<label>End Date: <input type="text"
+								class="to_date form-control " placeholder="Select end date"
+								contenteditable="false">
+							</label>
+						</div>
+					</div>
+					<div class="row">
+					<div class="col-sm-12 table-responsive">
+						<table id="example"
+							class="table table-striped table-bordered dataTable"
+							cellspacing="0" width="100%" role="grid"
+							aria-describedby="example_info" style="width: 100%;">
+							<thead>
+								<tr role="row">
+									<th class="sorting_asc" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="Sr No: activate to sort column descending"
+										style="width: 136px;" aria-sort="ascending">Sr No</th>
+									<th class="sorting" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="PaymentID: activate to sort column ascending"
+										style="width: 215px;">PaymentID</th>
+									<th class="sorting" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="Name: activate to sort column ascending"
+										style="width: 215px;">Name</th>
+									<th class="sorting" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="School: activate to sort column ascending"
+										style="width: 98px;">School</th>
+									<th class="sorting" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="Bank: activate to sort column ascending"
+										style="width: 43px;">Bank</th>
+									<th class="sorting" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="Date: activate to sort column ascending"
+										style="width: 93px;">Date</th>
+									<th class="sorting" tabindex="0" aria-controls="example"
+										rowspan="1" colspan="1"
+										aria-label="Amount: activate to sort column ascending"
+										style="width: 76px;">Amount</th>
+								</tr>
+							</thead>
+
+							<tfoot>
+								<tr>
+									<th rowspan="1" colspan="1">Sr No</th>
+									<th rowspan="1" colspan="1">PaymentID</th>
+									<th rowspan="1" colspan="1">Name</th>
+									<th rowspan="1" colspan="1">School</th>
+									<th rowspan="1" colspan="1">Bank</th>
+									<th rowspan="1" colspan="1">Date</th>
+									<th rowspan="1" colspan="1">Amount</th>
+								</tr>
+							</tfoot>
+
+							<tbody>
+								<tr role="row" class="odd">
+									<td class="sorting_1">1</td>
+									<td>345D34</td>
+									<td>Steve</td>
+									<td>St.Laurance</td>
+									<td>Citi</td>
+									<td>2008/11/28</td>
+									<td>$16</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">2</td>
+									<td>356dddD34</td>
+									<td>Mark</td>
+									<td>St.Mary</td>
+									<td>HDFC</td>
+									<td>2009/11/31</td>
+									<td>$150</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">3</td>
+									<td>4577ds56D</td>
+									<td>Steve</td>
+									<td>St.Laurance</td>
+									<td>HSBC</td>
+									<td>2009/11/28</td>
+									<td>$168</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">4</td>
+									<td>345Drtg34</td>
+									<td>Mark</td>
+									<td>St.Mary</td>
+									<td>Citi</td>
+									<td>2008/11/28</td>
+									<td>$160</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">5</td>
+									<td>345Ddd34</td>
+									<td>Steve</td>
+									<td>St.Laurance</td>
+									<td>Citi</td>
+									<td>2008/11/28</td>
+									<td>$160</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">6</td>
+									<td>345awwD34</td>
+									<td>Steve</td>
+									<td>St.Laurance</td>
+									<td>Citi</td>
+									<td>2008/11/28</td>
+									<td>$160</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">7</td>
+									<td>345Ddad34</td>
+									<td>Steve</td>
+									<td>St.Laurance</td>
+									<td>Citi</td>
+									<td>2008/11/28</td>
+									<td>$160</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">8</td>
+									<td>345Dddad34</td>
+									<td>Steve</td>
+									<td>St.Laurance</td>
+									<td>Citi</td>
+									<td>2008/11/28</td>
+									<td>$160</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+			<div class="footer pmf_txt_center">
+				<ul class="footer_info_nav">
+					<li>Home</li>
+					<li>Partner With Us</li>
+					<li>Careers</li>
+					<li>About Us</li>
+
+				</ul>
+				<div class="pmf_footer_copyright pmf_txt_center">Copyright ©
+					2014 Samay Macro Solutions Pvt Ltd</div>
+			</div>
+			<!-- Main component for a primary marketing message or call to action -->
+			<!-- /container -->
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
